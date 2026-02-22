@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Market</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="hidden">
+        <div class="bm">
+            <div class="bm-header">
+                <div class="bm-header-left">
+                    <div class="bm-logo"><i class="fas fa-store"></i></div>
+                    <div class="bm-header-info">
+                        <span class="bm-header-title" id="headerTitle">BLACK MARKET</span>
+                        <span class="bm-header-name" id="headerName"></span>
+                    </div>
+                </div>
+                <div class="bm-header-right">
+                    <div class="bm-balance" id="balanceDisplay">
+                        <i class="fas fa-coins"></i>
+                        <span id="balance">$0</span>
+                    </div>
+                    <button class="bm-close" id="closeBtn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <div class="bm-tabs" id="tabsContainer"></div>
+
+            <div class="bm-content">
+                <div class="bm-left">
+                    <div class="bm-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="">
+                    </div>
+                    <div class="bm-items" id="itemsList"></div>
+                </div>
+
+                <div class="bm-right hidden" id="detailPanel">
+                    <div class="bm-detail-img">
+                        <img id="detailImg" src="" alt="">
+                    </div>
+                    <div class="bm-detail-body">
+                        <h3 id="detailName"></h3>
+                        <p id="detailDesc"></p>
+                        <div class="bm-detail-stats">
+                            <div class="bm-stat">
+                                <span class="bm-stat-label" id="labelPrice">Pris</span>
+                                <span class="bm-stat-value green" id="detailPrice"></span>
+                            </div>
+                            <div class="bm-stat">
+                                <span class="bm-stat-label" id="labelStock">Lager</span>
+                                <span class="bm-stat-value" id="detailStock"></span>
+                            </div>
+                        </div>
+                        <div class="bm-detail-qty">
+                            <span class="bm-qty-label" id="labelQty">Antal</span>
+                            <div class="bm-qty-ctrl">
+                                <button class="bm-qty-btn" id="qtyMinus"><i class="fas fa-minus"></i></button>
+                                <input type="number" id="qtyInput" value="1" min="1">
+                                <button class="bm-qty-btn" id="qtyPlus"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="bm-detail-total">
+                            <span id="labelTotal">I alt:</span>
+                            <span class="green" id="detailTotal"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bm-footer">
+                <div class="bm-footer-total">
+                    <span id="footerTotalLabel">Total:</span>
+                    <span class="green" id="footerTotal">$0</span>
+                </div>
+                <button class="bm-buy-btn" id="buyBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="buyBtnText"></span>
+                </button>
+            </div>
+
+            <div class="bm-notif hidden" id="notification">
+                <span id="notifText"></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
